@@ -28,3 +28,23 @@ def get_newssources(category): # Function that gets the json response to our url
 
 
     return newssource_results
+
+def process_results(newssource_list): # Function  that processes the newssource result and transform them to a list of Objects. We create a function process_results() that takes in a list of dictionaries. We create an empty list newssource_results this is where we will store our newly created newssource objects.
+
+    newssource_results = []
+    for newssource_item in newssource_list: #  loop through the list of dictionaries using the get() method and pass in the keys so that we can access the values.
+        id = newssource_item.get('id')
+        title = newssource_item.get('title')
+        description = newssource_item.get('description')
+        urlToImage = newssource_item.get('urlToImage_path')
+        publishedAt = newssource_item.get('publishedAt')
+        url = newssource_item.get('url')
+
+        if urlToImage: # Some newssource_item 's might not have a poster. This will give an error when we are trying to create an object. So we check if the newssource_item has a poster  
+            newssource_object = Newssource(id,title,description,urlToImage,publishedAt,url) ##we create the newssource object.
+            newssource_results.append(newssource_object) # We use the values we get to create a new newssource object then we append it to our empty list.
+
+    return newssource_results #  We then return the list with newssource objects.
+
+
+
