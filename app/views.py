@@ -4,5 +4,6 @@ from app import app # import the app instance from the app folder.
 
 @app.route('/') #  create a route decorator @app.route('/')
 def index(): #define the view function index()
-
-    return render_template('index.html') # use the render_template() function and pass in index.html file
+ 
+    message = 'Hello World' #add a message variable
+    return render_template('index.html',message = message) #use the render_template() function and pass in index.html file and message variable as argument. The first message on the left of the = sign, represents the variable in the template. While the one to the right represents the variable in our view function.
