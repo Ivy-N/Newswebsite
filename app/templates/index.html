@@ -8,7 +8,12 @@
         <title> Welcome to the best News Source website </title>
         {% endif %}
     </head>
-    <body>
-
-    </body>
+    <body>  <!-- Popular newssource section  -->
+        <h3> Popular Movies</h3>
+         <ul>
+            {% for reuters_newssource in reuters %}  <!-- We create a for loop inside a control block and loop through each newssource.  -->
+                <li>{{ reuters_newssource.title}}</li>  <!-- We create a list with the newssource title. -->
+            {% endfor %}
+        </ul>
+ </body>
 </html>
