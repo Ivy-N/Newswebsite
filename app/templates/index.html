@@ -2,18 +2,12 @@
 <html>
     <head>   <!--  Inside our <head></head> we have a control block with an if statement. -->
         <meta charset="utf-8">
-        {% if title %}  <!-- control blocks are defined using {% %}. They are used to declare functions,loops and if statements. The if statement here checks if we have provided a title variable for the template. -->
-        <title> {{ title }}</title> <!-- # // variable block that will be replaced with dynamic content from flask, defined with double curly braces and a variable name placed inside. -->
-        {% else %}   <!--  In the chance that you forget to provide a title to your template the else control block is executed and a default title is used instead. -->
         <title> Welcome to the best News Source website </title>
-        {% endif %}
     </head>
-    <body>  <!-- Popular newssource section  -->
-        <h3> Popular Movies</h3>
+    <body>  <!-- Newssource section  -->
+        <h3> News Sources</h3>
          <ul>
-            {% for reuters_newssource in reuters %}  <!-- We create a for loop inside a control block and loop through each newssource.  -->
-                <li>{{ reuters_newssource.title}}</li>  <!-- We create a list with the newssource title. -->
-            {% endfor %}
+            {% for newssource in Newssource %}
         </ul>
  </body>
 </html>
