@@ -10,3 +10,5 @@ app.config.from_pyfile('config.py') #The app.config.from_pyfile('config.py') con
 bootstrap = Bootstrap(app)
 
 from app import views #import our views file from the app folder in order to create views
+from app import error #import error.py file in the __init__.py file.
+

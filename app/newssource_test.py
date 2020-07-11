@@ -1,5 +1,5 @@
 import unittest #  import the Unittest module
-from models import newssource # import the newssource module
+from .models import newssource # import the newssource module
 Newssource = newssource.Newssource # get the Newssource class which we will create.
 
 class NewssourceTest(unittest.TestCase): #  create a test class

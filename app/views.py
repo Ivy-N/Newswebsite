@@ -12,7 +12,6 @@ def index(): #define the view function index()
     return(response['totalResults'])
     return(response['articles'])
 
-
 @app.route('/newssource/<int:newssource_id>') #new route that has a newssource() view function. The part in the angle brackets <> is dynamic. And any route mapped to this will be passed. We changed the dynamic part to <int:newssource_id> to transform content to integer.
 def newssource(newssource_id): # returns a response of a newssource.html file. By default, dynamic parts are rendered as strings but they can be transformed to be of any type
     
